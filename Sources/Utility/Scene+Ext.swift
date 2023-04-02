@@ -54,4 +54,12 @@ extension SCNVector3 {
 public func lerp(a: CGFloat, b: CGFloat, t: CGFloat) -> CGFloat {
     return a + (b - a) * t
 }
+
+extension GLKVector3 {
+    public func rotationAroundY() -> SCNFloat {
+        let angle = atan2f(-z, x) + .pi / 2
+        return SCNFloat(angle)
+    }
+}
+
 #endif
